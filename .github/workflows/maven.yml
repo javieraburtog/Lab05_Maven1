@@ -27,6 +27,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: permission
+        chmod 644 /home/runner/work/Lab05_Maven1/Lab05_Maven1/pom.xml
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml -e
 
