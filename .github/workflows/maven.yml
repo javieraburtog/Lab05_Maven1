@@ -27,9 +27,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-        
-    - name: Current Directory    
-      working-directory: /home/runner/work/Lab05_Maven1/Lab05_Maven1
 
     - name: Build with Maven
       run: mvn -B package -file /home/runner/work/Lab05_Maven1/Lab05_Maven1/pom.xml -e
