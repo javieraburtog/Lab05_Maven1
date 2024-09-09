@@ -29,5 +29,5 @@ jobs:
         cache: maven
 
     - name: Build with Maven
-      run: mvn -B package -file /home/runner/work/Lab05_Maven1/Lab05_Maven1/pom.xml -e
+      run: mvn -B package -file /home/runner/work/Lab05_Maven1/Lab05_Maven1/pom.xml -x -e
       
