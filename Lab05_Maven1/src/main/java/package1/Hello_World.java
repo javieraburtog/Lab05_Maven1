@@ -9,8 +9,13 @@ public class Hello_World {
 		System.out.println("Hello, World! 22221w222");
 		
 		System.out.println("Hello, World");
+		
+		if (args.length > 10) {
+			System.out.println("Error: Too many arguments");
+			
+		}
+			
 
-        
         String hello = "A";
         switch (hello) {
             case "A":
