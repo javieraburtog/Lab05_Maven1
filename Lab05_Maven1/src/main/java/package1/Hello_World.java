@@ -7,6 +7,8 @@ public class Hello_World {
 		
 		System.out.println("Hello, World! 1112222111");
 		System.out.println("Hello, World! 22221w222");
+		
+		System.out.println("Hello, World");
 
         
         String hello = "A";
