@@ -8,6 +8,39 @@
 
 name: Java CI with Maven
 
+author: "JAAG"
+description: "Build automatically Java Maven library and publish it to GitHub Packages and Maven Central."
+branding:
+  icon: "package"
+  color: "gray-dark"
+
+inputs:
+  nexus-username:
+    description: "Nexus username"
+    required: true
+  nexus-password:
+    description: "Nexus password"
+    required: true
+  gpg-private-key:
+    description: "GPG private key"
+    required: true
+  gpg-passphrase:
+    description: "GPG passphrase"
+    required: true
+  github-token:
+    description: "GitHub token"
+    required: true
+  # Java version to use
+  java-version:
+    description: "Java version to use"
+    required: true
+    default: "17"
+  # Library version
+  library-version:
+    description: "Library version"
+    required: false
+    default: ""
+
 on:
   push:
     branches: [ "master" ]
@@ -27,7 +60,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-               server-username: THIS_IS_A_VARIABLE_USERNAME
+   server-username: MAVEN_USERNAME
+        server-password: MAVEN_PASSWORD
+        gpg-private-key: ${{ inputs.gpg-private-key }}
+        gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
         
         cache: maven
