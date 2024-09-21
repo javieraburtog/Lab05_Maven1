@@ -16,24 +16,27 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 17
+    steps:   
+    - name: Step 1 - Checkout Project java
+      uses: actions/checkout@v3
+      
+    - name: Step 2 - Set up JDK 17
       uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
         
-    - name: Remove default github maven configuration
+    - name: Step 3 - Remove default github maven configuration
         # This step is a workaround to avoid a decryption issue of Beam's
         # net.linguica.gradle.maven.settings plugin and github's provided maven
         # settings.xml file
       run: rm ~/.m2/settings.xml
       
-   
-    - name: Build with Maven
+    - name: Step 4 - Currente Directory
+      run: ls -a
+      
+    - name: Step 5 - Build with Maven
       run: mvn -B -X package -file pom.xml -e
       
