@@ -32,8 +32,10 @@ jobs:
         # net.linguica.gradle.maven.settings plugin and github's provided maven
         # settings.xml file
       run: rm ~/.m2/settings.xml
-        
+      
+    - name: List directory contents
+      run: ls -la /home/runner/work/Lab05_Maven1/Lab05_Maven1/     
 
     - name: Build with Maven
-      run: mvn -B -X package -file /home/runner/work/Lab05_Maven1/Lab05_Maven1/pom.xml -e
+      run: mvn -B -X package -file pom.xml -e
       
